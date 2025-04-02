@@ -1,0 +1,98 @@
+--DDL Syntax (Create Table)
+CREATE DATABASE FinalProjectCineMoFie
+GO
+USE FinalProjectCineMoFie
+GO
+
+-------------------------------
+--Drop the table if it exists
+DROP TABLE IF EXISTS TransactionDetail
+DROP TABLE IF EXISTS TransactionHeader
+DROP TABLE IF EXISTS PurchaseDetail
+DROP TABLE IF EXISTS PurchaseHeader
+DROP TABLE IF EXISTS MsMovie
+DROP TABLE IF EXISTS MsDrink
+DROP TABLE IF EXISTS MsFood
+DROP TABLE IF EXISTS MsSupplier
+DROP TABLE IF EXISTS MsCustomer
+DROP TABLE IF EXISTS MsStaff
+
+-------------------------------
+
+CREATE TABLE MsStaff (
+	StaffID CHAR(5) PRIMARY KEY CHECK(StaffID LIKE 'ST[0-9][0-9][0-9]') NOT NULL,
+	StaffName VARCHAR(50) NOT NULL,
+	StaffDOB DATE CHECK(DATEDIFF(YEAR, StaffDOB, GETDATE()) > 17) NOT NULL,
+	StaffAddress VARCHAR(255) NOT NULL,
+	StaffGender VARCHAR(6) CHECK(StaffGender IN ('Male', 'Female')) NOT NULL
+)
+
+CREATE TABLE MsCustomer (
+	CustomerID CHAR(5) PRIMARY KEY CHECK(CustomerID LIKE 'CU[0-9][0-9][0-9]') NOT NULL,
+	CustomerName VARCHAR(50) NOT NULL,
+	CustomerDOB DATE NOT NULL,
+	CustomerGender VARCHAR(6) CHECK(CustomerGender IN ('Male', 'Female')) NOT NULL
+)
+
+CREATE TABLE MsSupplier (
+	SupplierID CHAR(5) PRIMARY KEY CHECK(SupplierID LIKE 'SU[0-9][0-9][0-9]') NOT NULL,
+	SupplierName VARCHAR(50) NOT NULL,
+	SupplierAddress VARCHAR(255) NOT NULL,
+) 
+
+CREATE TABLE MsFood (
+	FoodID CHAR(5) PRIMARY KEY CHECK(FoodID LIKE 'FO[0-9][0-9][0-9]') NOT NULL,
+	FoodName VARCHAR(50) NOT NULL,
+	FoodCategory VARCHAR(20) CHECK(FoodCategory IN ('Pasta', 'Salad', 'Sandwich', 'Snack', 'Fried')) NOT NULL,
+	FoodPrice INT NOT NULL
+)
+
+CREATE TABLE MsDrink (
+	DrinkID CHAR(5) PRIMARY KEY CHECK(DrinkID LIKE 'DR[0-9][0-9][0-9]') NOT NULL,
+	DrinkName VARCHAR(50) NOT NULL,
+	DrinkCategory VARCHAR(20) CHECK(DrinkCategory IN ('Soft Drink', 'Tea', 'Coffee', 'Milk', 'Herbal')) NOT NULL,
+	DrinkPrice INT NOT NULL
+)
+
+CREATE TABLE MsMovie (
+	MovieID CHAR(5) PRIMARY KEY CHECK(MovieID LIKE 'MO[0-9][0-9][0-9]') NOT NULL,
+	MovieName VARCHAR(50) NOT NULL,
+	MovieCategory VARCHAR(20) CHECK(MovieCategory IN ('U', 'PG', 'PG-13', 'R', 'NC-17')) NOT NULL,
+	MovieRating INT CHECK(MovieRating BETWEEN 1 AND 5) NOT NULL,
+	MovieDuration SMALLINT NOT NULL,
+	MoviePrice INT NOT NULL
+)
+
+CREATE TABLE PurchaseHeader (
+	PurchaseID CHAR(5) PRIMARY KEY CHECK(PurchaseID LIKE 'PU[0-9][0-9][0-9]') NOT NULL,
+	StaffID CHAR(5) REFERENCES MsStaff(StaffID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	SupplierID CHAR(5) REFERENCES MsSupplier(SupplierID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	PurchaseDate DATE NOT NULL
+)
+
+CREATE TABLE PurchaseDetail (
+	PurchaseID CHAR(5) REFERENCES PurchaseHeader(PurchaseID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	FoodID CHAR(5) REFERENCES MsFood(FoodID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	DrinkID CHAR(5) REFERENCES MSDrink(DrinkID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	FoodQty INT NOT NULL,
+	DrinkQty INT NOT NULL,
+	PRIMARY KEY (PurchaseID, FoodID, DrinkID)
+)
+
+CREATE TABLE TransactionHeader (
+	TransactionID CHAR(5) PRIMARY KEY CHECK(TransactionID LIKE 'TR[0-9][0-9][0-9]') NOT NULL,
+	StaffID CHAR(5) REFERENCES MsStaff(StaffID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	CustomerID CHAR(5) REFERENCES MsCustomer(CustomerID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	TransactionDate DATE NOT NULL
+)
+
+CREATE TABLE TransactionDetail (
+	TransactionID CHAR(5) REFERENCES TransactionHeader(TransactionID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	TicketSoldID CHAR(5) REFERENCES MsMovie(MovieID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	FoodSoldID CHAR(5) REFERENCES MsFood(FoodID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	DrinkSoldID CHAR(5) REFERENCES MsDrink(DrinkID) ON UPDATE CASCADE ON DELETE CASCADE NOT NULL,
+	TicketSoldQty INT NOT NULL,
+	FoodSoldQty INT NOT NULL,
+	DrinkSoldQty INT NOT NULL,
+	PRIMARY KEY (TransactionID, TicketSoldID, FoodSoldID, DrinkSoldID)
+)

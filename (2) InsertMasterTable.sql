@@ -1,0 +1,230 @@
+--Insert Data into Master Table
+-- All the Master Table in CineMoFie are identified by the table name wthat started with 'Ms', such as 'MsStaff'
+USE FinalProjectCineMoFie
+GO
+
+INSERT INTO MsStaff 
+VALUES
+	('ST001', 'Satya Hidayanto', '1987-07-12', 'Gg. Sutami No. 205, Madiun 67882, SulTeng', 'Male'),
+	('ST002', 'Luis Wasita', '1999-04-03', 'Kpg. Daan No. 107, Banda Aceh 19984, DIY', 'Male'),
+	('ST003', 'Jefri Januar', '1998-11-01', 'Ki. Rajawali Barat No. 684, Sibolga 90503, SumBar', 'Male'),
+	('ST004', 'Ika Prastuti', '1993-03-27', 'Jr. Jambu No. 74, Mataram 56340, Maluku', 'Female'),
+	('ST005', 'Sakura Mayasari', '2003-08-03', 'Dk. Banal No. 548, Tasikmalaya 65435, KalTeng', 'Female'),
+	('ST006', 'Ciaobella Wahyuni', '2001-12-20', 'Jr. Madrasah No. 197, Tebing Tinggi 83755, SulTeng', 'Female'),
+	('ST007', 'Salman Megantara', '2000-09-11', 'Ds. Basmol Raya No. 113, Madiun 24541, Maluku', 'Male'),
+	('ST008', 'Dimaz Erifin', '1997-11-22', 'Kpg. Jagakarsa No. 24, Jayapura 41999, DIY', 'Male'),
+	('ST009', 'Siska Laksmiwati', '2002-02-22', 'Psr. Suharso No. 447, Banjarbaru 96946, Gorontalo', 'Female'),
+	('ST010', 'Ilsa Lestari', '2004-10-03', 'Kpg. Jayawijaya No. 877, Padangsidempuan 53477, KepR', 'Female'),
+	('ST011', 'Prima Gunarto', '1996-06-03', 'Dk. Pelajar Pejuang 45 No. 166, Tangerang Selatan 26753, Maluku', 'Male')
+
+INSERT INTO MsCustomer
+VALUES
+	('CU001', 'Dimas Permadi', '1999-05-11', 'Male'),
+	('CU002', 'Gina Yuniar', '2005-02-28', 'Female'),
+	('CU003', 'Irnanto Maulana', '1999-06-02', 'Male'),
+	('CU004', 'Winda Hartati', '2006-04-30', 'Female'),
+	('CU005', 'Dani Fernanda', '2004-02-28', 'Male'),
+	('CU006', 'Michelle Utami', '2003-07-14', 'Female'),
+	('CU007', 'Virman Ramadan', '2007-10-10', 'Male'),
+	('CU008', 'Lurhur Sahur', '1980-11-01', 'Male'),
+	('CU009', 'Jamil Hidayanto', '2012-12-12', 'Male'),
+	('CU010', 'Eman Lazuardi', '2016-12-03', 'Male'),
+	('CU011', 'Eli Nurdiyanti', '1997-10-14', 'Female'),
+	('CU012', 'Taufik Iswahyudi', '1996-01-11', 'Male'),
+	('CU013', 'Pia Hariyah', '2013-03-26', 'Female')
+
+INSERT INTO MsSupplier
+VALUES
+	('SU001', 'PT Jiwa Cakrawala Selatan', 'Jr. Rajawali Timur No. 154, DKI Jakarta'),
+	('SU002', 'PT Gilang Nusantara Tujuh', 'Jln. Bara No. 912, Gorontalo'),
+	('SU003', 'PT Citra Lampung Tata', 'Kpg. Eka No. 901, Nusa Tenggara Barat'),
+	('SU004', 'PT Sriwijaya Harum Perkasa', 'Psr. Sampangan No. 208, Sulawesi Tenggara'),
+	('SU005', 'PT Batam Lezat Kartika', 'Jr. Kalimantan No. 25, DKI Jakarta'),
+	('SU006', 'PT Manis Insani Sempurna', 'Jr. Baranang Siang Indah No. 678, DKI Jakarta'),
+	('SU007', 'PT Sedap Citra Sehat', 'Jr. Gedebage Selatan No. 172, Kalimantan Selatan'),
+	('SU008', 'PT Lajur Bintang Citra', 'Psr. R.M. Said No. 120, Bengkulu'),
+	('SU009', 'PT Indonusa Enam Belas', 'Jln. Banda No. 309, Gorontalo'),
+	('SU010', 'PT Herbal Nirwana Madani', 'Ds. Hasanuddin No. 690, Kalimantan Tengah')
+
+INSERT INTO MsFood
+VALUES
+	('FO001' , 'Spaghetti Bolognese' , 'Pasta' , 20000),
+	('FO002' , 'Caesar Salad' , 'Salad' , 15000),
+	('FO003' , 'Fettuccine Alfredo' , 'Pasta' , 22000),
+	('FO004' , 'Truffle Pasta' , 'Pasta' , 30000),
+	('FO005' , 'Lasagna' , 'Pasta' , 25000),
+	('FO006' , 'Fried Chicken' , 'Fried' , 15000),
+	('FO007' , 'Fish and Chips' , 'Fried' , 18000),
+	('FO008' , 'Calamari' , 'Fried' , 12000),
+	('FO009' , 'Tempura' , 'Fried' , 10000),
+	('FO010' , 'BLT Sandwich' , 'Sandwich' , 20000),
+	('FO011' , 'Club Sandwich' , 'Sandwich' , 18000),
+	('FO012' , 'Beef Burger' , 'Sandwich' , 17000),
+	('FO013' , 'Grilled Cheese' , 'Sandwich' , 15000),
+	('FO014' , 'Potato Chips' , 'Snack' , 10000),
+	('FO015' , 'Popcorn' , 'Snack' , 8000),
+	('FO016' , 'Croissant' , 'Snack' , 10000),
+	('FO017' , 'Waldorf Salad' , 'Salad' , 12000),
+	('FO018' , 'Greek Salad' , 'Salad' , 13000),
+	('FO019' , 'Chicken Caesar Salad', 'Salad' , 15000),
+	('FO020' , 'Beef Salad' , 'Salad' , 17000)
+
+INSERT INTO MsDrink
+VALUES
+	('DR001', 'Coca-Cola', 'Soft Drink', 15000),
+	('DR002', 'Sprite', 'Soft Drink', 15000),
+	('DR003', 'Fanta Orange', 'Soft Drink', 15000),
+	('DR004', 'Prime', 'Soft Drink', 25000),
+	('DR005', 'Lemon Iced Tea', 'Tea', 13000),
+	('DR006', 'Green Tea', 'Tea', 14000),
+	('DR007', 'Thai Tea', 'Tea', 15000),
+	('DR008', 'Boba Tea', 'Tea', 15000),
+	('DR009', 'Americano', 'Coffee', 18000),
+	('DR010', 'Caffe Latte', 'Coffee', 16000),
+	('DR011', 'Espresso', 'Coffee', 20000),
+	('DR012', 'Cappuccino', 'Coffee', 20000),
+	('DR013', 'Chocolate Milk', 'Milk', 17000),
+	('DR014', 'Full Cream Milk', 'Milk', 14000),
+	('DR015', 'Skim Milk', 'Milk', 16000),
+	('DR016', 'Strawberry Milk', 'Milk', 16000),
+	('DR017', 'Echinacea Tea', 'Herbal', 20000),
+	('DR018', 'Creamy Ginger', 'Herbal' , 22000),
+	('DR019', 'Gingseng Tea', 'Herbal', 25000),
+	('DR020', 'Jamu', 'Herbal', 20000)
+
+INSERT INTO MsMovie
+VALUES
+  ('MO001', 'The Shawshank Redemption', 'R', 5, 142, 50000),
+  ('MO002', 'The Godfather', 'R', 5, 177, 40000),
+  ('MO003', 'The Dark Knight', 'PG-13', 5, 152, 50000),
+  ('MO004', 'The Lord of the Rings: The Return of the King', 'PG-13', 5, 201, 55000),
+  ('MO005', 'Pulp Fiction', 'R', 5, 154, 55000),
+  ('MO006', 'Schindlers List', 'R', 5, 195, 55000),
+  ('MO007', '12 Angry Men', 'PG', 5, 96, 55000),
+  ('MO008', 'The Good, the Bad and the Ugly', 'R', 5, 161, 60000),
+  ('MO009', 'Fight Club', 'R', 5, 139, 50000),
+  ('MO010', 'Forrest Gump', 'PG-13', 4, 142, 65000),
+  ('MO011', 'Your Favorite Movie', 'PG', 5, 120, 70000),
+  ('MO012', 'Another Great Movie', 'R', 5, 180, 45000),
+  ('MO013', 'Inception', 'PG-13', 5, 148, 50000),
+  ('MO014', 'The Matrix', 'R', 4, 136, 35000),
+  ('MO015', 'Interstellar', 'PG-13', 5, 169, 55000),
+  ('MO016', 'The Departed', 'R', 5, 146, 60000),
+  ('MO017', 'Whiplash', 'R', 5, 108, 55000),
+  ('MO018', 'Good Will Hunting', 'R', 5, 124, 50000),
+  ('MO019', 'The Big Lebowski', 'R', 4, 117, 30000),
+  ('MO020', 'Seven Samurai', 'NC-17', 5, 203, 45000),
+  ('MO021', 'Parasite', 'R', 5, 132, 40000),
+  ('MO022', 'Spirited Away', 'PG', 5, 125, 35000)
+
+INSERT INTO PurchaseHeader
+VALUES
+	('PU001', 'ST001', 'SU003', '2019-04-20'),
+	('PU002', 'ST003', 'SU002', '2019-06-12'),
+	('PU003', 'ST005', 'SU008', '2019-07-23'),
+	('PU004', 'ST007', 'SU001', '2019-11-02'),
+	('PU005', 'ST002', 'SU007', '2020-04-30'),
+	('PU006', 'ST005', 'SU004', '2020-06-16'),
+	('PU007', 'ST004', 'SU001', '2020-09-11'),
+	('PU008', 'ST006', 'SU006', '2020-12-18'),
+	('PU009', 'ST001', 'SU005', '2021-01-15'),
+	('PU010', 'ST004', 'SU008', '2021-05-05'),
+	('PU011', 'ST007', 'SU003', '2021-08-10'),
+	('PU012', 'ST002', 'SU009', '2021-11-15'),
+	('PU013', 'ST009', 'SU010', '2022-03-19'),
+	('PU014', 'ST008', 'SU004', '2022-06-09'),
+	('PU015', 'ST003', 'SU005', '2023-01-14'),
+	('PU016', 'ST007', 'SU001', '2023-07-24'),
+	('PU017', 'ST001', 'SU006', '2023-08-10'),
+	('PU018', 'ST005', 'SU008', '2023-08-20'),
+	('PU019', 'ST002', 'SU010', '2023-09-01'),
+	('PU020', 'ST009', 'SU009', '2023-09-25')
+
+INSERT INTO PurchaseDetail
+VALUES
+	 ('PU001', 'FO002', 'DR001', 50, 30),
+	 ('PU001', 'FO003', 'DR002', 50, 5),
+	 ('PU002', 'FO001', 'DR003', 50, 10),
+	 ('PU003', 'FO006', 'DR004', 20, 15),
+	 ('PU003', 'FO019', 'DR017', 15, 15),
+	 ('PU004', 'FO005', 'DR006', 30, 20),
+	 ('PU004', 'FO009', 'DR014', 25, 10),
+	 ('PU005', 'FO007', 'DR005', 35, 10),
+	 ('PU005', 'FO008', 'DR003', 15, 10),
+	 ('PU006', 'FO009', 'DR007', 25, 10),
+	 ('PU007', 'FO010', 'DR008', 50, 15),
+	 ('PU008', 'FO011', 'DR009', 20, 10),
+	 ('PU009', 'FO012', 'DR011', 10, 3),
+	 ('PU010', 'FO013', 'DR010', 20, 2),
+ 	 ('PU011', 'FO014', 'DR012', 25, 4),
+	 ('PU011', 'FO002', 'DR015', 20, 5),
+	 ('PU012', 'FO015', 'DR013', 10, 10),
+	 ('PU012', 'FO001', 'DR002', 15, 2),
+	 ('PU013', 'FO016', 'DR014', 40, 5),
+	 ('PU013', 'FO002', 'DR020', 20, 30),
+	 ('PU014', 'FO017', 'DR016', 30, 4),
+	 ('PU015', 'FO018', 'DR017', 35, 10),
+	 ('PU016', 'FO020', 'DR019', 15, 3),
+	 ('PU017', 'FO019', 'DR018', 30, 7),
+	 ('PU018', 'FO005', 'DR020', 30, 3),
+	 ('PU019', 'FO011', 'DR006', 23, 5),
+	 ('PU019', 'FO009', 'DR004', 20, 20),
+	 ('PU020', 'FO005', 'DR009', 15, 2)
+	
+INSERT INTO TransactionHeader
+VALUES
+	 ('TR001', 'ST001', 'CU013', '2019-04-25'),
+	 ('TR002', 'ST002', 'CU001', '2019-06-15'),
+	 ('TR003', 'ST005', 'CU005', '2019-07-28'),
+	 ('TR004', 'ST008', 'CU007', '2019-11-15'),
+	 ('TR005', 'ST003', 'CU010', '2020-01-18'),
+	 ('TR006', 'ST007', 'CU002', '2020-03-05'),
+	 ('TR007', 'ST001', 'CU004', '2020-07-01'),
+	 ('TR008', 'ST004', 'CU006', '2020-10-22'),
+	 ('TR009', 'ST006', 'CU008', '2021-02-12'),
+	 ('TR010', 'ST010', 'CU011', '2021-05-17'),
+	 ('TR011', 'ST011', 'CU003', '2021-08-27'),
+	 ('TR012', 'ST001', 'CU001', '2021-12-19'),
+	 ('TR013', 'ST009', 'CU005', '2022-02-08'),
+	 ('TR014', 'ST010', 'CU009', '2022-04-24'),
+	 ('TR015', 'ST011', 'CU001', '2022-10-22'),
+	 ('TR016', 'ST002', 'CU007', '2023-03-01'),
+	 ('TR017', 'ST005', 'CU010', '2023-05-12'),
+	 ('TR018', 'ST007', 'CU012', '2023-09-20'),
+	 ('TR019', 'ST001', 'CU001', '2024-01-15'),
+	 ('TR020', 'ST005', 'CU011', '2024-02-08')
+
+
+INSERT INTO TransactionDetail
+VALUES 
+	('TR001', 'MO015', 'FO001', 'DR001', 5, 3, 3),
+	('TR001', 'MO010', 'FO002', 'DR003', 2, 3, 5),
+	('TR002', 'MO002', 'FO003', 'DR002', 3, 5, 4),
+	('TR003', 'MO001', 'FO006', 'DR003', 7, 10, 8),
+	('TR003', 'MO003', 'FO005', 'DR005', 2, 1, 1),
+	('TR004', 'MO014', 'FO007', 'DR008', 7, 5, 5),
+	('TR005', 'MO013', 'FO008', 'DR006', 8, 4, 2),
+	('TR005', 'MO020', 'FO009', 'DR010', 8, 10, 5),
+	('TR006', 'MO017', 'FO010', 'DR009', 5, 9, 8),
+	('TR007', 'MO021', 'FO011', 'DR012', 9, 4, 5),
+	('TR008', 'MO003', 'FO012', 'DR011', 3, 5, 7),
+	('TR009', 'MO019', 'FO013', 'DR013', 6, 2, 1),
+	('TR010', 'MO015', 'FO014', 'DR015', 15, 2, 5),
+	('TR010', 'MO020', 'FO016', 'DR014', 15, 3, 3),
+	('TR011', 'MO022', 'FO017', 'DR016', 3, 2, 4),
+	('TR011', 'MO010', 'FO018', 'DR017', 3, 5, 3),
+	('TR012', 'MO009', 'FO019', 'DR018', 20, 10, 7),
+	('TR013', 'MO016', 'FO020', 'DR001', 16, 5, 3),
+	('TR014', 'MO015', 'FO002', 'DR004', 5, 4, 3),
+	('TR014', 'MO003', 'FO004', 'DR009', 5, 6, 5),
+	('TR015', 'MO007', 'FO007', 'DR011', 3, 8, 4),
+	('TR016', 'MO004', 'FO011', 'DR015', 20, 10, 12),
+	('TR016', 'MO001', 'FO015', 'DR019', 25, 10, 10),
+	('TR017', 'MO012', 'FO017', 'DR005', 5, 4, 3),
+	('TR017', 'MO006', 'FO005', 'DR011', 3, 4, 6),
+	('TR018', 'MO011', 'FO008', 'DR015', 10, 4, 5),
+	('TR018', 'MO016', 'FO009', 'DR017', 10, 2, 3),
+	('TR019', 'MO014', 'FO010', 'DR001', 5, 2, 2),
+	('TR019', 'MO011', 'FO013', 'DR003', 5, 5, 6),
+	('TR020', 'MO017', 'FO015', 'DR005', 3, 5, 3),
+	('TR020', 'MO005', 'FO010', 'DR002', 3, 6, 2)
