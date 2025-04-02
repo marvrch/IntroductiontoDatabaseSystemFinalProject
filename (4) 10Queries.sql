@@ -2,7 +2,8 @@
 USE FinalProjectCineMoFie
 GO
 
-/* Nomor 1
+/* 
+No 1
 Display Staffs (Obtained from StaffName in uppercase), PurchaseDate, and Total Food Purchase
 (Obtained from counting all the Transaction) for every Purchase made by male staff and happenned in 2019.
 */
@@ -22,7 +23,7 @@ DECLARE @executionTime VARCHAR(50) = CAST(DATEDIFF(MILLISECOND, @startTime, @end
 PRINT CAST(@@ROWCOUNT AS VARCHAR) + ' row(s) fetched - ' + @executionTime + ', on ' + CONVERT(VARCHAR, GETDATE(), 120);
 
 /*
-Nomor 2
+No 2
 Display PurchaseID, Supplier Name (Obtained from SupplierName in lowercase), and Total Drink Purchase 
 (Obtained from total sum of DrinkQuantity) for every Total Drink Purchase that less than 5 and PurchaseID is even number.
 */
@@ -37,7 +38,7 @@ GROUP BY PH.PurchaseID, SupplierName
 HAVING SUM(PD.DrinkQty) < 5
 
 /*
-Nomor 3
+No 3
 Display Transaction Date (Obtained from Converting the TransactionDate format to 'Mon dd. yyyy' example 'Oct 01. 2000'), 
 Highest Food Price Sold (Obtained from getting the maximum food price), 
 Lowest Drink Price Sold (Obtained from getting the minimum drink price) for every transaction that happenned before June 2023.
@@ -53,13 +54,13 @@ WHERE YEAR(TransactionDate) = 2023 AND MONTH(TransactionDate) < 6
 GROUP BY TransactionDate
 
 /*
-Nomor 4
+No 4
 Display Staff's First Name (Obtained from getting the first staff name in lowercase format), 
 FoodCategory, and Average Total Food Purchased (Obtained from the purchased food quantity average), and 
 Total Food Purchased (Obtained from total sum of FoodQuantity) for every purchase that has average food quantity 
 is more than 2 and the FoodCategory is 'Fried'.
 */
-SELECT LOWER(LEFT(StaffName, CHARINDEX(' ', StaffName)-1)) AS 'Staff‘s First Name',
+SELECT LOWER(LEFT(StaffName, CHARINDEX(' ', StaffName)-1)) AS 'Staffâ€˜s First Name',
 FoodCategory,
 AVG(PD.FoodQty) AS 'Average Total Food Purchased',
 SUM(PD.FoodQty) AS 'Total Food Purchased'
@@ -72,7 +73,7 @@ GROUP BY StaffName, FoodCategory
 HAVING AVG(PD.FoodQty) > 2
 
 /*
-Nomor 5
+No 5
 Display TransactionID, Drink Transaction Forecast (Obtained from adding one year to the TransactionDate),
 and Drink Quantity (Obtained from adding ' Cup' at the end of DrinkQuantity) for every 'Soft Drink' or 'Herbal' 
 drink category in a single transaction that has more than 1 quantity sold.
@@ -93,9 +94,9 @@ WHERE TH.TransactionID = alias.TransactionID
 
 
 /*
-Nomor 6
+No 6
 Display StaffID, Transaction Date (Obtained from Converting the TransactionDate to 'dd Mon yyyy' format, ex: 31 Jan 2023), 
-Movie Identification (Obtained from change the first 2 letter from MovieID to ‘Movie ‘), 
+Movie Identification (Obtained from change the first 2 letter from MovieID to â€˜Movie â€˜), 
 Movie Name (Obtained from adding 'Film ' in front of the MovieName), 
 and MovieCategory for every Movie that has duration higher than the average duration and the MovieID is 'MO003'
 (ALIAS SUB QUERY)
@@ -115,7 +116,7 @@ WHERE MovieID LIKE 'MO003' AND MovieDuration > alias.avg
 
 
 /*
-Nomor 7 
+No 7 
 Display Last Name (Obtained from getting the last name of the CustomerName) and Total Movie Sold 
 (Obtained from the total multiplication of TicketQuantity and Movie Price) for every first quarter of a year 
 which Total Movie Sold is above the Average of all Total Movie Sold.
@@ -148,7 +149,7 @@ WHERE alias1.TotalMovieSold > alias3.AverageTotalMovieSold
 
 
 /*
-Nomor 8
+No 8
 Display Transaction (Obtained from changing the first two character from TransactionID to 'Transaction ' in Uppercase format), 
 StaffName, Customer Name (Obtained from adding 'Ms/Mrs. ' in front of the CustomerName), and Transaction Date 
 (Obtained from getting the year of TransactionDate) for every female customer and total transaction is higher than the average total transaction
@@ -194,7 +195,7 @@ FROM
 WHERE alias1.[Total Transaction]> alias3.[Average Total Transaction]
 
 /*
-Nomor 9
+No 9
 Create a view named 'TotalPurchase' to display Staff (Obtained from changing first staff name with 'Staff ') 
 MovieName, MovieRating, Average Ticket Bought (Obtained from average of TicketQuantity), and Total Ticket Bought 
 (Obtained from total sum of the TicketQuantity) for every movie that has 5 star rating and the total sum of 
@@ -216,7 +217,7 @@ GROUP BY StaffName, MovieName, MovieRating
 HAVING SUM(TicketSoldQty) > AVG(TicketSoldQty)
 
 /* 
-Nomor 10
+No 10
 Create a view named 'Food Sales' to display FoodName, Total Quantity Sold (Obtained from total sum of FoodQuantity sold), 
 and Average Food Price (Obtained average of FoodPrice) for every food which category is 'Sandwich' 
 and the Transaction is happenned in current Year.
