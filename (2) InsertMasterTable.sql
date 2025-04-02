@@ -1,5 +1,5 @@
 --Insert Data into Master Table
--- All the Master Table in CineMoFie are identified by the table name wthat started with 'Ms', such as 'MsStaff'
+-- All the Master Table in CineMoFie are identified by the table name that started with 'Ms', such as 'MsStaff'
 USE FinalProjectCineMoFie
 GO
 
@@ -115,7 +115,7 @@ VALUES
   ('MO019', 'The Big Lebowski', 'R', 4, 117, 30000),
   ('MO020', 'Seven Samurai', 'NC-17', 5, 203, 45000),
   ('MO021', 'Parasite', 'R', 5, 132, 40000),
-  ('MO022', 'Spirited Away', 'PG', 5, 125, 35000)
+  ('MO022', 'Spirited Away', 'PG',Â 5,Â 125,Â 35000)
 
 INSERT INTO PurchaseHeader
 VALUES
