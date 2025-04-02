@@ -46,7 +46,7 @@ VALUES
 	('TR022', 'MO007', 'FO011', 'DR001', 3, 6, 2),
 	('TR023', 'MO010', 'FO009', 'DR005', 1, 2, 1)
 
--- For transaction TR022, the quantity of movie ticket M007 purchased by the customer was corrected to 2
+-- For transaction TR022, the quantity of movie ticket MO007 purchased by the customer was corrected to 2
 UPDATE TransactionDetail
 SET TicketSoldQty = 2
 WHERE TransactionID = 'TR022'
